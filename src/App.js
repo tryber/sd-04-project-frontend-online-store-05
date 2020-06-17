@@ -1,27 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
+=======
+// import * as MLB from './services/api';
+>>>>>>> 68f63af4fa9d190572e39222f1ee5adf5eebb8fb
 import * as api from './services/api';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {api
+        .getCategories()
+        .then((categories) => categories.json())
+        .then((data) => (
+          <div>{data}</div>
+        ))}
+      {/* console.log(data) */}
+      {api
+        .getProductsFromCategoryAndQuery()
+        .then((categories) => categories.json())
+        .then((data) => (
+          <div>{data}</div>
+        ))}
+      {/* console.log(data) */}
     </div>
   );
 }
-
 export default App;
