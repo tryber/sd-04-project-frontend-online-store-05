@@ -9,11 +9,17 @@ function App() {
       {api
         .getCategories()
         .then((categories) => categories.json())
-        .then((data) => console.log(data))}
+        .then((data) => (
+          <div>{data}</div>
+        ))}
+      {/* console.log(data) */}
       {api
         .getProductsFromCategoryAndQuery()
         .then((categories) => categories.json())
-        .then((data) => console.log(data))}
+        .then((data) => (
+          <div>{data}</div>
+        ))}
+      {/* console.log(data) */}
     </div>
   );
 }
