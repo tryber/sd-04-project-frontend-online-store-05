@@ -1,20 +1,24 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 // import * as MLB from './services/api';
->>>>>>> 68f63af4fa9d190572e39222f1ee5adf5eebb8fb
-import * as api from './services/api';
-=======
-import Home from './components/Home';
 // import * as api from './services/api';
->>>>>>> 48821734550d0dbb6095b74208ad05871e557a8a
+import Home from './components/Home';
+import ShopPage from './components/ShopPage';
+// import * as api from './services/api';
+// import CartIcon from './components/Shop';
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      {/* <Home /> */}
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/ShopPage" component={ShopPage} />
+        </Switch>
+      </BrowserRouter>
+      {/* <Shop /> */}
       {/* {api
         .getCategories()
         .then((categories) => categories.json())
