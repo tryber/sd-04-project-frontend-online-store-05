@@ -4,9 +4,7 @@ import * as api from '../services/api';
 class Categories extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      categories: '',
-    };
+    this.state = { categories: '' };
   }
   componentDidMount() {
     api.getCategories().then((response) => this.setState({ categories: response }));
@@ -17,8 +15,8 @@ class Categories extends Component {
     return (
       <div>
         {categories.map((cat) => (
-          <label key={cat.id}>
-            <input type="radio" data-testid="category" />
+          <label htmlFor="categ" key={cat.id}>
+            <input id="categ" type="radio" data-testid="category" />
             {cat.name}
             <br />
           </label>
