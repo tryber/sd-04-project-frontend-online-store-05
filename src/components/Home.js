@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CartIcon from './CartIcon';
 
 class Home extends Component {
   render() {
@@ -9,6 +10,7 @@ class Home extends Component {
         <p data-testid="home-initial-message">
           Digite algum termo de pesquisa ou escolha uma categoria.
         </p>
+        <CartIcon />
       </div>
     );
   }
