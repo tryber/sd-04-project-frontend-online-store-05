@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import CartIcon from './CartIcon';
-import Categories from './Categories';
+import CartIcon from '../components/CartIcon';
+import Categories from '../components/Categories';
 
-class Home extends Component {
+class ProductDetails extends Component {
   render() {
     return (
       <div>
-        {/* <label></label> */}
-        <input type="text" />
         <p data-testid="home-initial-message">
           Digite algum termo de pesquisa ou escolha uma categoria.
         </p>
@@ -18,4 +16,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default ProductDetails;

@@ -1,20 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-// import * as MLB from './services/api';
-// import * as api from './services/api';
-import Home from './components/Home';
-import ShopPage from './components/ShopPage';
-// import * as api from './services/api';
-// import CartIcon from './components/Shop';
+import ShopPage from './Pages/ShopPage';
+import ProductList from './Pages/ProductList';
 
 function App() {
   return (
     <div className="App">
-      {/* <Home /> */}
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={ProductList} />
           <Route exact path="/ShopPage" component={ShopPage} />
         </Switch>
       </BrowserRouter>
