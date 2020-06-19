@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-// import * as api from '../services/api';
 
 class Input extends Component {
   render() {
     const { value, onClick, onChange } = this.props;
-    // console.log(this.state.items);
     return (
       <div>
         <input
@@ -13,15 +11,9 @@ class Input extends Component {
           value={value}
           onChange={onChange}
         />
-        <button
-          type="button"
-          data-testid="query-button"
-          // onClick={() => api.getProductsFromCategoryAndQuery(search)}
-          onClick={onClick}
-        >
+        <button type="button" data-testid="query-button" onClick={onClick}>
           Search
         </button>
-        {/* {console.log(items)} */}
       </div>
     );
   }
