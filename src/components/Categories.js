@@ -1,51 +1,34 @@
 import React, { Component } from 'react';
 import * as api from '../services/api';
 
-// function createRadio(cat, callback) {
-//   return (
-//     <div className="categoriesDiv" style={{ display: 'inline-block' }}>
-//       <label htmlFor={cat.id} data-testid="category">
-//         <input
-//           type="radio"
-//           id={cat.id}
-//           name="categoriesRadio"
-//           value={cat.name}
-//           onChange={callback}
-//         />
-//         {cat.name}
-//       </label>
-//     </div>
-//   );
-// }
+function createRadio(cat, callback) {
+  return (
+    <div className="categoriesDiv" style={{ display: 'inline-block' }}>
+      <label htmlFor={cat.id} data-testid="category">
+        <input
+          type="radio"
+          id={cat.id}
+          name="categoriesRadio"
+          value={cat.name}
+          onChange={callback}
+        />
+        {cat.name}
+      </label>
+    </div>
+  );
+}
 
 class Categories extends Component {
   constructor(props) {
     super(props);
     this.state = { categories: '' };
-    this.createRadio = this.createRadio.bind(this);
+    // this.createRadio = this.createRadio.bind(this);
   }
 
   componentDidMount() {
     api
       .getCategories()
       .then((response) => this.setState({ categories: response }));
-  }
-
-  createRadio(cat, callback) {
-    return (
-      <div className="categoriesDiv" style={{ display: 'inline-block' }}>
-        <label htmlFor={cat.id} data-testid="category">
-          <input
-            type="radio"
-            id={cat.id}
-            name="categoriesRadio"
-            value={cat.name}
-            onChange={callback}
-          />
-          {cat.name}
-        </label>
-      </div>
-    );
   }
 
   render() {
@@ -67,7 +50,7 @@ class Categories extends Component {
       //     </label>
       //   ))}
       // </div>
-      <div>{categories.map((cat) => this.createRadio(cat, onChange))}</div>
+      <div>{categories.map((cat) => createRadio(cat, onChange))}</div>
     );
   }
 }
