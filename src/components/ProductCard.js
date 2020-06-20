@@ -20,8 +20,9 @@ import React from 'react';
 class ProductCard extends React.Component {
   render() {
     const { product } = this.props;
+    // console.log(product)
     return (
-      <div>
+      <div data-testid="product">
         <img src={product.thumbnail} alt="product cover" />
         <h4>{product.title}</h4>
         <h6>{product.price}</h6>
