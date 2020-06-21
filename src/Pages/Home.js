@@ -11,6 +11,7 @@ class Home extends Component {
     this.state = { search: '', items: '' };
     this.changeSearch = this.changeSearch.bind(this);
     this.getProduct = this.getProduct.bind(this);
+    this.getProductFromId = this.getProduct.bind(this);
   }
 
   getProduct() {
@@ -18,8 +19,25 @@ class Home extends Component {
     api
       .getProductsFromCategoryAndQuery(search)
       .then((res) => this.setState({ items: res.results }));
-    // console.log(item)
-    // this.setState({ items: item.results })
+  }
+
+  getProductFromId(e) {
+    const { items } = this.state;
+    const query = items;
+    const categoryId = e.target.id;
+    if (query && categoryId) {
+      api
+        .getProductsFromCategoryAndQuery({ categoryId, query })
+        .then((results) => this.setState({ items: results.results }));
+    } else if (categoryId) {
+      api
+        .getProductsFromCategoryAndQuery({ categoryId })
+        .then((results) => this.setState({ items: results.results }));
+    } else {
+      api
+        .getProductsFromCategoryAndQuery({ query })
+        .then((results) => this.setState({ items: results.results }));
+    }
   }
 
   changeSearch(event) {
@@ -39,7 +57,7 @@ class Home extends Component {
           onClick={this.getProduct}
         />
         <CartIcon />
-        <Categories />
+        <Categories onChange={this.getProductFromId} />
         <ProdList items={items} />
       </div>
     );
