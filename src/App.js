@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import ShopPage from './Pages/ShopPage';
 import Home from './Pages/Home';
+import ProductDetails from './Pages/ProdDetails';
 
 function App() {
   return (
@@ -11,21 +12,9 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/ShopPage" component={ShopPage} />
+          <Route path="/ProdDetails/:id" component={ProductDetails} />
         </Switch>
       </BrowserRouter>
-      {/* <Shop /> */}
-      {/* {api
-        .getCategories()
-        .then((categories) => categories.json())
-        .then((data) => (
-          <div>{data}</div>
-        ))}
-      {api
-        .getProductsFromCategoryAndQuery()
-        .then((categories) => categories.json())
-        .then((data) => (
-          <div>{data}</div>
-        ))} */}
     </div>
   );
 }

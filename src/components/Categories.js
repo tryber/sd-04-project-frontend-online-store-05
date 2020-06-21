@@ -22,7 +22,6 @@ class Categories extends Component {
   constructor(props) {
     super(props);
     this.state = { categories: '' };
-    // this.createRadio = this.createRadio.bind(this);
   }
 
   componentDidMount() {
@@ -35,23 +34,7 @@ class Categories extends Component {
     const { categories } = this.state;
     const { onChange } = this.props;
     if (categories === '') return <p>Loading...</p>;
-    return (
-      // <div>
-      //   {categories.map((cat) => (
-      //     <label htmlFor={cat.id} key="categorie">
-      //       <input
-      //         id={cat.id}
-      //         type="radio"
-      //         data-testid="category"
-      //         onChange={onChange}
-      //       />
-      //       {cat.name}
-      //       <br />
-      //     </label>
-      //   ))}
-      // </div>
-      <div>{categories.map((cat) => createRadio(cat, onChange))}</div>
-    );
+    return <div>{categories.map((cat) => createRadio(cat, onChange))}</div>;
   }
 }
 

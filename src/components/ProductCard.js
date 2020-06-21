@@ -1,31 +1,28 @@
-// import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-// class ProductCard extends React.Component {
-//   render() {
-//     const { items } = this.props;
-//     return (
-//       <div data-testid="product">
-//         <img src={items.imagePath} alt="product cover" />
-//         <h4>{items.title}</h4>
-//         <h5>{items.price}</h5>
-//       </div>
-//     );
-//   }
-// }
-
-// export default ProductCard;
-
-import React from 'react';
-
-class ProductCard extends React.Component {
+class ProductCard extends Component {
   render() {
     const { product } = this.props;
-    // console.log(product)
     return (
       <div data-testid="product">
-        <img src={product.thumbnail} alt="product cover" />
-        <h4>{product.title}</h4>
-        <h6>{product.price}</h6>
+        <div>{product.title}</div>
+        <div>
+          <img src={product.thumbnail} alt="Product Cover" />
+          <p>{product.price}</p>
+          <div>
+            <Link
+              type="button"
+              data-testid="product-detail-link"
+              to={{
+                pathname: `/ProdDetails/${product.id}`,
+                state: { product },
+              }}
+            >
+              Detalhes do Produto
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }

@@ -64,30 +64,3 @@ class Home extends Component {
   }
 }
 export default Home;
-
-// import React, { Component } from 'react';
-// import CartIcon from '../components/CartIcon';
-// import Categories from '../components/Categories';
-// import Input from '../components/Input';
-// import ProductList from '../components/ProductList';
-// import * as api from '../services/api';
-
-// class Home extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { items: [] };
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         <ProductList items={items}/>
-//         <CartIcon />
-//         <Input />
-//         <Categories />
-//       </div>
-//     );
-//   }
-// }
-
-// export default Home;
