@@ -7,14 +7,14 @@ class ShopPage extends Component {
     this.state = { cartItems: [] };
   }
 
- qualquerNome() {
+  qualquerNome() {
     if (!localStorage.cartItems) localStorage.cartItems = JSON.stringify([]);
     const keyStorage = JSON.parse(localStorage.cartItems);
     this.setState({ cartItems: keyStorage });
- }
+  }
 
   componentDidMount() {
-    this.qualquerNome()
+    this.qualquerNome();
   }
 
   filterItem(itemId) {
@@ -33,11 +33,6 @@ class ShopPage extends Component {
           <p data-testid="shopping-cart-product-quantity">{this.filterItem(res.id)}</p>
         </div>
       ))
-      // <div>
-      //   <Link data-testid="checkout-products" to="/Checkout">
-      //     <button type="button">Comprar</button>
-      //   </Link>
-      // </div>
     );
   }
 }
