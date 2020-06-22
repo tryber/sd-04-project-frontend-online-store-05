@@ -4,7 +4,6 @@ import Categories from '../components/Categories';
 import Input from '../components/Input';
 import ProdList from '../components/ProdList';
 import * as api from '../services/api';
-import AddProduct from '../components/AddCart';
 
 class Home extends Component {
   constructor(props) {
@@ -52,11 +51,7 @@ class Home extends Component {
         <p data-testid="home-initial-message">
           Digite algum termo de pesquisa ou escolha uma categoria.
         </p>
-        <Input
-          value={search}
-          onChange={this.changeSearch}
-          onClick={this.getProduct}
-        />
+        <Input value={search} onChange={this.changeSearch} onClick={this.getProduct} />
         <CartIcon />
         <Categories onChange={this.getProductFromId} />
         <ProdList items={items} />
