@@ -4,6 +4,7 @@ import Categories from '../components/Categories';
 import Input from '../components/Input';
 import ProdList from '../components/ProdList';
 import * as api from '../services/api';
+import AddProduct from '../components/AddCart';
 
 class Home extends Component {
   constructor(props) {

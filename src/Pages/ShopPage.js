@@ -7,10 +7,14 @@ class ShopPage extends Component {
     this.state = { cartItems: [] };
   }
 
-  componentDidMount() {
+ qualquerNome() {
     if (!localStorage.cartItems) localStorage.cartItems = JSON.stringify([]);
     const keyStorage = JSON.parse(localStorage.cartItems);
     this.setState({ cartItems: keyStorage });
+ }
+
+  componentDidMount() {
+    this.qualquerNome()
   }
 
   filterItem(itemId) {
