@@ -4,6 +4,7 @@ import './App.css';
 import ShopPage from './Pages/ShopPage';
 import Home from './Pages/Home';
 import ProductDetails from './Pages/ProdDetails';
+import Checkout from './Pages/Checkout';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/ShopPage" component={ShopPage} />
           <Route path="/ProdDetails/:id" component={ProductDetails} />
+          <Route exact path="/Checkout" component={Checkout} />
         </Switch>
       </BrowserRouter>
     </div>

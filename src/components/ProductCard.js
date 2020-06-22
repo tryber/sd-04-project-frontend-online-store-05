@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import AddToCart from './AddToCart';
 
 class ProductCard extends Component {
   render() {
@@ -21,6 +22,9 @@ class ProductCard extends Component {
             >
               Detalhes do Produto
             </Link>
+            <div>
+              <AddToCart item={product} testid="product-add-to-cart" />
+            </div>
           </div>
         </div>
       </div>
